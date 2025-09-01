@@ -323,3 +323,43 @@ body {
 .np-card p{
   margin: 0;
 }
+
+/* Description box below all cards */
+.card-description {
+  width: 100%;              /* full width of the parent container */
+  max-width: 1111px;        /* optional: max width for large screens */
+  margin: 10px auto 0;      /* top margin, center horizontally */
+ margin-bottom: 30px;
+  padding: 20px 30px;       /* vertical 20px, horizontal 30px padding */
+  background-color: var(--off-white);
+  color: var(--navy);
+  border-radius: 12px;      /* rounded corners */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* soft shadow */
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+  box-sizing: border-box;   /* include padding in width */
+}
+
+/* Show the description with animation */
+.card-description.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Style the heading */
+.card-description h2 {
+  font-size: 1.3rem;       /* bigger than normal text */
+  margin-bottom: 10px;     /* spacing below heading */
+  font-weight: 600;        /* semi-bold */
+}
+
+/* Style the paragraph */
+.card-description p {
+  font-size: 1rem;         /* normal text size */
+  line-height: 1.6;        /* spacing between lines */
+  margin: 0;               /* reset default margin */
+  color: var(--navy);      /* optional if you want same color */
+}
+
