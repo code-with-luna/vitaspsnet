@@ -21,7 +21,7 @@ body {
 
 /* ===== Navbar ===== */
 .navbar {
-  background-color: var(--dark-blue) !important;
+  background-color: #0d1b2a !important;
   padding: 0.5rem 1rem;
 }
 
@@ -79,4 +79,126 @@ body {
   .nav-link {
     padding: 0.8rem 1rem;
   }
+}
+
+
+/* hero section */
+.rectangle-box {
+    position: relative;
+    background-color:#0d1b2a; /* dark-blue background */
+    width: 100%;
+    height: 415px;
+    display: flex;
+    justify-content: center; /* horizontal center */
+    padding-top: 30px;
+    text-align: center;      /* center text inside */
+}
+
+.rectangle-content h1 {
+    color: white; /* light-slate heading */
+    font-size: 2.5rem; /* heading size */
+    margin-bottom: 0.5rem;
+    margin-top: -1rem;
+}
+
+.rectangle-content p {
+    color:white; /* light-slate paragraph */
+    font-size: 1.2rem;
+    
+    
+}
+
+.card-container {
+    position: absolute;
+    bottom: -45px; /* instead of margin-bottom */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card-title {
+    font-weight: 700;
+    color: var(--navy); /* slate/navy text for card title */
+}
+
+.card .card-text {
+    color: var(--navy) !important;
+}
+
+.card {
+    background-color: #f3f3f2; /* off-white card background */
+    width: 220px !important;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.btn-primary {
+    background-color: var(--slate) !important; /* slate button */
+    border-color: var(--slate) !important;
+    color: var(--off-white) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--navy) !important; /* darker shade on hover */
+    border-color: var(--navy) !important;
+}
+.learn-more-btn {
+  display: inline-block;
+  margin-left: 10px; /* space from text */
+  padding: 6px 15px;
+  background-color: var(--slate);
+  color: var(--off-white);
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.learn-more-btn:hover {
+  background-color: var(--light-slate);
+}
+
+/* Mobile-only overrides */
+@media (max-width: 767px) {
+    /* Let hero expand */
+    .rectangle-box {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    /* Cancel absolute positioning of cards */
+    .card-container {
+        position: static !important;   /* flow below hero text */
+        transform: none !important;
+        bottom: auto !important;
+        left: auto !important;
+        margin-top: 20px;              /* spacing below hero text */
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Stack cards vertically */
+    .card-container .d-flex {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card-container .custom-card {
+        width: 200% !important;
+        max-width: 350px;
+    }
+
+    /* Scale down hero text */
+    .rectangle-content h1 {
+        font-size: 1.5rem;
+        line-height: 1.1;
+        margin-bottom: 8px;
+    }
+
+    .rectangle-content p {
+        font-size: 0.9rem;
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
