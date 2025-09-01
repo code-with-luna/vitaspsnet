@@ -254,3 +254,72 @@ body {
     padding-left: 100%;  /* keep animation starting off-screen */
   }
 }
+/* Section padding */
+
+.feature-cards {
+  padding-top: 0px;
+  padding-bottom: 30px; /* space below cards */
+}
+
+@media (max-width: 768px) {
+  .feature-cards {
+    padding-top: 10px;
+    padding-bottom: 10px; /* reduced for mobile */
+  }
+}
+
+/* 2x5 Grid for desktop, 1 per row for mobile */
+.np-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+@media (max-width: 767.98px){ 
+  .np-grid{ 
+    grid-template-columns: 1fr; 
+  } 
+}
+
+/* Cards styling */
+.np-card {
+  background: var(--off-white);       /* off-white background */
+  border: 1px solid var(--slate);     /* border color */
+  border-radius: 12px;                 /* rounded corners */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* soft shadow */
+  margin-bottom: -1%;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;                 /* icon + text on same line */
+  gap: 12px;
+  color: var(--navy);                  /* text color */
+  font-weight: 400;
+  line-height: 1.4;
+  transition: all 0.3s ease;           /* smooth hover transition */
+}
+
+.np-card svg path {
+  transition: stroke 0.3s ease;
+  stroke: var(--slate);                /* icon stroke color */
+}
+
+/* Hover effect */
+.np-card:hover {
+  background: var(--dark-blue);        /* dark blue background */
+  color: var(--off-white);             /* text light on hover */
+  cursor: pointer;
+}
+.np-card:hover svg path {
+  stroke: var(--off-white);            /* icon color on hover */
+}
+
+/* Icon size */
+.np-icon{
+  width: 22px; 
+  height: 22px;
+  flex: 0 0 auto;
+}
+
+/* Paragraph inside card */
+.np-card p{
+  margin: 0;
+}
