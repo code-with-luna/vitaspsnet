@@ -87,7 +87,7 @@ body {
     position: relative;
     background-color:#0d1b2a; /* dark-blue background */
     width: 100%;
-    height: 415px;
+    height: 330px;
     display: flex;
     justify-content: center; /* horizontal center */
     padding-top: 30px;
@@ -96,14 +96,14 @@ body {
 
 .rectangle-content h1 {
     color: white; /* light-slate heading */
-    font-size: 2.5rem; /* heading size */
+    font-size: 2.2rem; /* heading size */
     margin-bottom: 0.5rem;
     margin-top: -1rem;
 }
 
 .rectangle-content p {
     color:white; /* light-slate paragraph */
-    font-size: 1.2rem;
+    font-size: 0.94rem;
     
     
 }
@@ -143,7 +143,7 @@ body {
 }
 .learn-more-btn {
   display: inline-block;
-  margin-left: 10px; /* space from text */
+  margin-top: -1%;
   padding: 6px 15px;
   background-color: var(--slate);
   color: var(--off-white);
@@ -201,4 +201,56 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+/* Full-width marquee */
+.np-marquee-full {
+  width: 100%;                  /* full container width */
+  overflow: hidden;
+  background: #e0e1dd;      /* your theme background */
+  padding: 12px 0;
+  margin-top: 3.6rem;
+  margin-bottom: 30px;          /* spacing below marquee */
+  box-sizing: border-box;
+  text-align: left;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Marquee text */
+.np-marquee-full p {
+  display: inline-block;
+  white-space: nowrap;
+  color: #0d1b2a;/* text color from your theme */
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding-left: 100%;           /* start off-screen */
+  animation: scroll-left 20s linear infinite;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* Scroll animation */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Pause on hover + cursor */
+.np-marquee-full:hover p {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+/* Reduce gap on mobile */
+@media (max-width: 767px){
+  .np-marquee-full {
+    margin-top: 10px;   /* space above the marquee */
+    margin-bottom: 15px; /* space below the marquee */
+    padding: 8px 0;     /* optional: reduce vertical padding */
+  }
+
+  .np-marquee-full p {
+    font-size: 0.9rem;
+    padding-left: 100%;  /* keep animation starting off-screen */
+  }
 }
