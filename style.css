@@ -363,3 +363,116 @@ body {
   color: var(--navy);      /* optional if you want same color */
 }
 
+
+/* Top layout: left (logo+text) | right (services) */
+.footer-top {
+  
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  max-width: 1300px;
+ 
+  align-items: start;
+  background-color: var(--dark-blue); /* footer background matches header */
+  padding: 40px 20px;
+}
+
+/* Left: logo + paragraph */
+.footer-logo-section {
+  text-align: left;
+  margin-right: 40px; 
+}
+.footer-logo-section img {
+  height: 65px;
+  margin-bottom: 15px;
+  margin-top: -15px ;
+}
+.footer-logo-section p {
+  margin: 0;
+  color: var(--off-white); /* soft white text */
+  font-size: 1.12rem;
+  line-height: 1.5;
+  max-width: 520px;
+}
+
+.footer-heading {
+  position: relative;
+  text-align: left;   /* left aligned */
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--off-white); /* soft white text */
+  margin-bottom: 20px;
+  text-decoration: none;
+  margin-left: 210px !important;  /* adjust to position */
+  top: -7px !important; 
+}
+
+.footer-services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 15px 40px; 
+  margin-left: 40px;
+}
+
+.footer-service {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  transition: color 0.3s;
+  font-size: 1rem;
+  color: var(--off-white); /* soft white text */
+}
+.footer-service::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--slate); /* arrow color */
+  font-size: 0.85rem;
+}
+.footer-service:hover {
+  color: var(--light-slate); /* hover color */
+}
+
+/* Bottom bar */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid var(--navy); /* darker border for separation */
+  padding: 15px 10px;
+  font-size: 1rem;
+  color: var(--off-white); /* soft white text */
+  background-color: var(--dark-blue); /* matches footer background */
+}
+.footer-bottom a.sps-link {
+  color: var(--off-white); /* soft white link */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-bottom a.sps-link:hover {
+  color: var(--slate); /* hover color */
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .footer-top {
+    grid-template-columns: 1fr;  /* stack columns */
+    gap: 24px;
+    padding: 20px;
+  }
+  .footer-logo-section img {
+    height: 50px;
+    margin-bottom: 5px; 
+    transform: translateY(-10px); 
+  }
+  .footer-heading {
+    margin-left: 0 !important; 
+    text-align: left;          
+  }
+
+  .footer-services {
+    grid-template-columns: 1fr;  
+    gap: 12px;
+    margin-left: 0;             
+    justify-items: start;       
+  }
+}
